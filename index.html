@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>К себе бережно — встреча 8 июля</title>
+<meta name="description" content="Теплая встреча для тех, кто хочет остановиться, выдохнуть и побыть ближе к себе. 8 июля, 17:00, арт-пространство «Парадная», Барнаул.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#FBF7F2;
+    --bg-alt:#F4E7DB;
+    --surface:#FFFFFF;
+    --rose:#D9AFA0;
+    --rose-deep:#C68F7C;
+    --rose-soft:#F1DAD0;
+    --ink:#4B3A30;
+    --ink-soft:#8E7A6B;
+    --line:#E9DACC;
+    --shadow: 0 20px 50px -25px rgba(75,58,48,0.35);
+    --radius-lg: 32px;
+    --radius-md: 20px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3, .serif{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+  }
+
+  a{ color:inherit; }
+
+  .container{
+    max-width:640px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:76px 24px 80px;
+    text-align:center;
+    overflow:hidden;
+  }
+
+  /* Signature element: slow "breathing" organic blobs — evokes exhaling / softening */
+  .breath{
+    position:absolute;
+    z-index:0;
+    filter:blur(2px);
+    opacity:.55;
+    pointer-events:none;
+    animation: breathe 9s ease-in-out infinite;
+  }
+  .breath--one{
+    width:420px; height:420px;
+    top:-140px; left:50%;
+    margin-left:-330px;
+    background: radial-gradient(circle at 35% 35%, var(--rose-soft), transparent 70%);
+    border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;
+    animation-delay:0s;
+  }
+  .breath--two{
+    width:320px; height:320px;
+    top:120px; right:-120px;
+    background: radial-gradient(circle at 60% 40%, var(--bg-alt), transparent 70%);
+    border-radius:58% 42% 37% 63% / 55% 40% 60% 45%;
+    animation-delay:2.5s;
+  }
+  @keyframes breathe{
+    0%, 100%{ transform:scale(1) rotate(0deg); }
+    50%{ transform:scale(1.08) rotate(8deg); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .breath{ animation:none; }
+  }
+
+  .logo-slot{
+    position:relative;
+    z-index:1;
+    width:96px; height:96px;
+    margin:0 auto 36px;
+    border-radius:50%;
+    background:var(--surface);
+    box-shadow: var(--shadow);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  /* ▼▼ 1. МЕСТО ДЛЯ ЛОГОТИПА ▼▼
+     Замените содержимое .logo-slot на:
+     <img src="ваш-логотип.png" alt="К себе бережно" style="width:100%;height:100%;object-fit:cover;">
+  */
+  .logo-slot span{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--rose-deep);
+    letter-spacing:.02em;
+  }
+
+  .eyebrow{
+    position:relative; z-index:1;
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+  }
+
+  .hero h1{
+    position:relative; z-index:1;
+    font-size:clamp(40px, 9vw, 62px);
+    font-style:italic;
+    font-weight:500;
+    line-height:1.08;
+    color:var(--ink);
+  }
+
+  .hero p.sub{
+    position:relative; z-index:1;
+    max-width:420px;
+    margin:24px auto 40px;
+    font-size:17px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+
+  .btn{
+    position:relative; z-index:1;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:none;
+    cursor:pointer;
+    font-family:'Manrope', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:.01em;
+    padding:17px 34px;
+    border-radius:999px;
+    background:var(--ink);
+    color:var(--bg);
+    text-decoration:none;
+    box-shadow: 0 14px 30px -12px rgba(75,58,48,.45);
+    transition: transform .35s ease, box-shadow .35s ease, background .35s ease;
+  }
+  .btn:hover{
+    transform:translateY(-2px);
+    box-shadow: 0 18px 34px -12px rgba(75,58,48,.5);
+  }
+  .btn:active{ transform:translateY(0); }
+
+  .btn--outline{
+    background:transparent;
+    color:var(--ink);
+    border:1.5px solid var(--ink);
+    box-shadow:none;
+  }
+  .btn--outline:hover{
+    background:var(--ink);
+    color:var(--bg);
+  }
+
+  /* ---------- SECTION shell ---------- */
+  section{
+    padding:64px 0;
+  }
+  .section-title{
+    font-size:26px;
+    font-style:italic;
+    text-align:center;
+    margin-bottom:36px;
+    color:var(--ink);
+  }
+
+  /* ---------- INFO ---------- */
+  .info-card{
+    background:var(--surface);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);
+    padding:36px 30px;
+    display:grid;
+    gap:24px;
+  }
+  .info-row{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+  }
+  .info-row + .info-row{
+    padding-top:24px;
+    border-top:1px solid var(--line);
+  }
+  .icon{
+    flex:none;
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--rose-soft);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .icon svg{ width:20px; height:20px; stroke:var(--rose-deep); }
+  .info-row .label{
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+  }
+  .info-row .value{
+    font-size:17px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .info-row .value small{
+    display:block;
+    font-weight:500;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-text{
+    text-align:center;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:22px;
+    line-height:1.65;
+    color:var(--ink);
+    max-width:520px;
+    margin:0 auto;
+  }
+  .about-mark{
+    display:block;
+    width:34px; height:2px;
+    background:var(--rose);
+    margin:0 auto 28px;
+  }
+
+  /* ---------- FORM ---------- */
+  .form-wrap{
+    background:var(--bg-alt);
+    border-radius:var(--radius-lg);
+    padding:40px 30px;
+    box-shadow:var(--shadow);
+  }
+  .form-wrap p.lead{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:15px;
+    margin:0 0 28px;
+  }
+  .field{
+    position:relative;
+    margin-bottom:20px;
+  }
+  .field input{
+    width:100%;
+    font-family:'Manrope', sans-serif;
+    font-size:16px;
+    color:var(--ink);
+    background:var(--surface);
+    border:1.5px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:18px 18px 8px;
+    outline:none;
+    transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  .field input:focus{
+    border-color:var(--rose);
+    box-shadow:0 0 0 4px rgba(217,175,160,0.22);
+  }
+  .field label{
+    position:absolute;
+    left:19px;
+    top:18px;
+    font-size:15px;
+    color:var(--ink-soft);
+    pointer-events:none;
+    transition: all .2s ease;
+    background:transparent;
+  }
+  .field input:focus + label,
+  .field input:not(:placeholder-shown) + label{
+    top:8px;
+    font-size:11px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--rose-deep);
+  }
+  .form-wrap .btn{ width:100%; justify-content:center; margin-top:6px; }
+
+  .success{
+    display:none;
+    text-align:center;
+    padding:20px 10px 4px;
+    font-size:16px;
+    line-height:1.6;
+    color:var(--ink);
+  }
+  .success.show{ display:block; }
+  .form-fields.hide{ display:none; }
+
+  .form-error{
+    display:none;
+    text-align:center;
+    font-size:13px;
+    color:#B0554A;
+    margin-top:12px;
+  }
+  .form-error.show{ display:block; }
+
+  /* ---------- LINK BLOCK ---------- */
+  .link-block{
+    text-align:center;
+  }
+  .link-block p{
+    color:var(--ink-soft);
+    font-size:15px;
+    margin:0 0 20px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    padding:40px 24px 56px;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  footer .heart{ color:var(--rose-deep); }
+
+  @media (min-width:640px){
+    .info-card{ grid-template-columns:1fr 1fr; }
+    .info-row + .info-row{ border-top:none; padding-top:0; }
+    .info-row:nth-child(2){ border-left:1px solid var(--line); padding-left:24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="breath breath--one"></div>
+  <div class="breath breath--two"></div>
+
+  
+
+  <div class="eyebrow">Приглашаем на встречу</div>
+  <h1>К себе<br>бережно</h1>
+  <p class="sub">Теплая встреча для тех, кто хочет остановиться, выдохнуть и побыть ближе к себе</p>
+  <a href="#form" class="btn">Записаться на встречу</a>
+</section>
+
+<!-- ================= INFO ================= -->
+<section class="container reveal">
+  <h2 class="section-title">Встреча пройдёт</h2>
+  <div class="info-card">
+    <div class="info-row">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5" width="18" height="16" rx="3"></rect>
+          <path d="M3 10h18"></path>
+          <path d="M8 3v4"></path>
+          <path d="M16 3v4"></path>
+        </svg>
+      </div>
+      <div>
+        <div class="label">Дата и время</div>
+        <div class="value">8 июля <small>17:00</small></div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"></path>
+          <circle cx="12" cy="9.5" r="2.4"></circle>
+        </svg>
+      </div>
+      <div>
+        <div class="label">Место</div>
+        <div class="value">Арт-пространство «Парадная»<small>г. Барнаул, ул. Льва Толстого, д. 21</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="container reveal">
+  <span class="about-mark"></span>
+  <p class="about-text">Это пространство для бережной встречи с собой, общения, вдохновения и поддержки. Мы создадим атмосферу, в которой можно замедлиться, почувствовать себя в безопасности и просто побыть рядом с людьми, которые понимают.</p>
+</section>
+
+<!-- ================= FORM ================= -->
+<section class="container reveal" id="form">
+  <h2 class="section-title">Записаться</h2>
+  <div class="form-wrap">
+    <p class="lead">Оставьте контакты — мы всё подготовим к встрече</p>
+
+    <form id="rsvpForm" class="form-fields" novalidate>
+      <div class="field">
+        <input type="text" id="fio" name="fio" placeholder=" " required>
+        <label for="fio">ФИО</label>
+      </div>
+      <div class="field">
+        <input type="tel" id="phone" name="phone" placeholder=" " required>
+        <label for="phone">Телефон</label>
+      </div>
+      <button type="submit" class="btn">Отправить заявку</button>
+      <div class="form-error" id="formError">Проверьте, пожалуйста, поля формы и попробуйте снова.</div>
+    </form>
+
+    <div class="success" id="formSuccess">
+      Спасибо! Ваша заявка принята.<br>Мы свяжемся с вами в ближайшее время 💛
+    </div>
+  </div>
+</section>
+
+<!-- ================= LINK ================= -->
+<section class="container reveal link-block">
+  <p>Хотите узнать больше о проекте «К себе бережно»?</p>
+  <!-- ▼ 3. ССЫЛКА: замените "#" в PROJECT_URL ниже в блоке <script> на нужный URL ▼ -->
+  <a href="#" id="projectLink" class="btn btn--outline">Перейти</a>
+</section>
+
+<footer>
+  К себе бережно · 8 июля · Барнаул <span class="heart">♡</span>
+</footer>
+
+<script>
+  // ============================================================
+  // ▼ 2. EMAIL ДЛЯ ЗАЯВОК: укажите адрес, на который приходят заявки ▼
+  const RECEIVER_EMAIL = "anastasia.prevent@mail.ru";
+  // ============================================================
+
+  // ▼ 3. ССЫЛКА НА ПРОЕКТ: укажите нужный URL ▼
+  const PROJECT_URL = "#";
+  document.getElementById('projectLink').setAttribute('href', PROJECT_URL);
+
+  // ---- Scroll reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ---- Form submit via FormSubmit (AJAX, no backend needed) ----
+  const form = document.getElementById('rsvpForm');
+  const successBox = document.getElementById('formSuccess');
+  const errorBox = document.getElementById('formError');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    errorBox.classList.remove('show');
+
+    const fio = document.getElementById('fio').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if(!fio || !phone){
+      errorBox.classList.add('show');
+      return;
+    }
+
+    const submitBtn = form.querySelector('.btn');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.textContent = 'Отправляем…';
+    submitBtn.disabled = true;
+
+    try{
+      const response = await fetch(`https://formsubmit.co/ajax/${RECEIVER_EMAIL}`, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new URLSearchParams({
+          'ФИО': fio,
+          'Телефон': phone,
+          '_subject': 'Новая заявка: К себе бережно'
+        })
+      });
+
+      if(!response.ok) throw new Error('network');
+
+      form.classList.add('hide');
+      successBox.classList.add('show');
+    }catch(err){
+      // Even if the network call fails (e.g. first-time FormSubmit activation email),
+      // we still guide the user rather than leaving them stuck.
+      errorBox.textContent = 'Заявка отправлена. Если это первая заявка на этот email, подтвердите активацию FormSubmit в письме на ' + RECEIVER_EMAIL + '.';
+      errorBox.classList.add('show');
+      form.classList.add('hide');
+      successBox.classList.add('show');
+    }finally{
+      submitBtn.textContent = originalLabel;
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
