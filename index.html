@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>К себе бережно — встреча 8 июля</title>
-<meta name="description" content="Теплая встреча для тех, кто хочет остановиться, выдохнуть и побыть ближе к себе. 8 июля, 17:00, арт-пространство «Парадная», Барнаул.">
+<title>Биохилинг. К себе бережно — мини-группа Превент+</title>
+<meta name="description" content="Превент+ приглашает в мини-группу проекта «Биохилинг. К себе бережно». Снижение веса под контролем специалистов. Старт 1 августа, онлайн/оффлайн формат.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,10 +114,6 @@
     display:flex; align-items:center; justify-content:center;
     overflow:hidden;
   }
-  /* ▼▼ 1. МЕСТО ДЛЯ ЛОГОТИПА ▼▼
-     Замените содержимое .logo-slot на:
-     <img src="ваш-логотип.png" alt="К себе бережно" style="width:100%;height:100%;object-fit:cover;">
-  */
   .logo-slot span{
     font-family:'Fraunces', serif;
     font-style:italic;
@@ -247,24 +243,6 @@
     margin-top:2px;
   }
 
-  /* ---------- ABOUT ---------- */
-  .about-text{
-    text-align:center;
-    font-family:'Fraunces', serif;
-    font-style:italic;
-    font-size:22px;
-    line-height:1.65;
-    color:var(--ink);
-    max-width:520px;
-    margin:0 auto;
-  }
-  .about-mark{
-    display:block;
-    width:34px; height:2px;
-    background:var(--rose);
-    margin:0 auto 28px;
-  }
-
   /* ---------- FORM ---------- */
   .form-wrap{
     background:var(--bg-alt);
@@ -370,20 +348,19 @@
 <section class="hero">
   <div class="breath breath--one"></div>
   <div class="breath breath--two"></div>
-<div class="logo-slot">
-  <img src="logo.png" alt="Prevent+" style="width:64%;height:64%;object-fit:contain;">
-</div>
-  
+  <div class="logo-slot">
+    <img src="logo.png" alt="Prevent+" style="width:64%;height:64%;object-fit:contain;">
+  </div>
 
-  <div class="eyebrow">Превент + Приглашает на встречу</div>
-  <h1>К себе<br>бережно</h1>
-  <p class="sub">Теплая встреча для тех, кто хочет остановиться, выдохнуть и побыть ближе к себе</p>
-  <a href="#form" class="btn">Записаться на встречу</a>
+  <div class="eyebrow">Превент + приглашает в мини-группу проекта</div>
+  <h1>Биохилинг.<br>К себе бережно</h1>
+  <p class="sub">Снижение веса под контролем специалистов</p>
+  <a href="#form" class="btn">Подать заявку на участие</a>
 </section>
 
 <!-- ================= INFO ================= -->
 <section class="container reveal">
-  <h2 class="section-title">Встреча пройдёт</h2>
+  <h2 class="section-title">Групповая программа</h2>
   <div class="info-card">
     <div class="info-row">
       <div class="icon">
@@ -395,8 +372,8 @@
         </svg>
       </div>
       <div>
-        <div class="label">Дата и время</div>
-        <div class="value">8 июля <small>17:00</small></div>
+        <div class="label">Старт</div>
+        <div class="value">1 августа <small>В онлайн/оффлайн формате</small></div>
       </div>
     </div>
     <div class="info-row">
@@ -407,24 +384,18 @@
         </svg>
       </div>
       <div>
-        <div class="label">Место</div>
-        <div class="value">Арт-пространство «Парадная»<small>г. Барнаул, ул. Льва Толстого, д. 21</small></div>
+        <div class="label">Наставничество</div>
+        <div class="value">С наставничеством специалистов <small>Превент+</small></div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section class="container reveal">
-  <span class="about-mark"></span>
-  <p class="about-text">Это пространство для бережной встречи с собой, общения, вдохновения и поддержки. Мы создадим атмосферу, в которой можно замедлиться, почувствовать себя в безопасности и просто побыть рядом с людьми, которые понимают.</p>
 </section>
 
 <!-- ================= FORM ================= -->
 <section class="container reveal" id="form">
   <h2 class="section-title">Записаться</h2>
   <div class="form-wrap">
-    <p class="lead">Оставьте контакты — мы всё подготовим к встрече</p>
+    <p class="lead">Оставьте контакты — вышлем подробности участия</p>
 
     <form id="rsvpForm" class="form-fields" novalidate>
       <div class="field">
@@ -453,7 +424,7 @@
 </section>
 
 <footer>
-  К себе бережно · 8 июля · Превент+ <span class="heart">♡</span>
+  К себе бережно · Превент+ <span class="heart">♡</span>
 </footer>
 
 <script>
@@ -507,7 +478,7 @@
         body: new URLSearchParams({
           'ФИО': fio,
           'Телефон': phone,
-          '_subject': 'Новая заявка: К себе бережно'
+          '_subject': 'Новая заявка: Биохилинг. К себе бережно'
         })
       });
 
